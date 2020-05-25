@@ -17,15 +17,24 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-Xs-ttV" userLabel="Rock">
                                 <rect key="frame" x="0.0" y="519" width="128" height="128"/>
-                                <state key="normal" image="stoneisraelpng"/>
+                                <state key="normal" image="1"/>
+                                <connections>
+                                    <action selector="rockTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AEa-v0-Nv9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raB-Nq-iXr" userLabel="Paper">
                                 <rect key="frame" x="123.5" y="519" width="128" height="128"/>
-                                <state key="normal" image="paperisreal"/>
+                                <state key="normal" image="2"/>
+                                <connections>
+                                    <action selector="paperTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vAM-fz-UiF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIi-Ly-BLB" userLabel="Scissors">
                                 <rect key="frame" x="247" y="519" width="128" height="128"/>
-                                <state key="normal" image="scissorsisreal"/>
+                                <state key="normal" image="3"/>
+                                <connections>
+                                    <action selector="scissorsTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6nk-1X-pey"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doh-4h-laN">
                                 <rect key="frame" x="5" y="5" width="47" height="21"/>
@@ -39,10 +48,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperisreal" translatesAutoresizingMaskIntoConstraints="NO" id="avf-Np-WpW" userLabel="PlayerAnswer">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="avf-Np-WpW" userLabel="PlayerAnswer">
                                 <rect key="frame" x="0.0" y="26" width="128" height="128"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stoneisraelpng" translatesAutoresizingMaskIntoConstraints="NO" id="QqN-4f-diw" userLabel="CpuAnswer">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="QqN-4f-diw" userLabel="CpuAnswer">
                                 <rect key="frame" x="247" y="26" width="128" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GameOver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mq-OL-EIq">
@@ -73,6 +82,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cpuAnswer" destination="QqN-4f-diw" id="Uy9-q5-Hga"/>
+                        <outlet property="gameOverLaber" destination="0mq-OL-EIq" id="PHF-pf-fAv"/>
+                        <outlet property="playerAnswer" destination="avf-Np-WpW" id="8tA-cE-DIh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,8 +94,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="paperisreal" width="128" height="128"/>
-        <image name="scissorsisreal" width="128" height="128"/>
-        <image name="stoneisraelpng" width="128" height="128"/>
+        <image name="1" width="128" height="128"/>
+        <image name="2" width="128" height="128"/>
+        <image name="3" width="128" height="128"/>
     </resources>
 </document>
