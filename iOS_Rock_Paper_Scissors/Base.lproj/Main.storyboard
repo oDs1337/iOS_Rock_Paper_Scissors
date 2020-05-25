@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,78 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Rock_Paper_Scissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-Xs-ttV" userLabel="Rock">
+                                <rect key="frame" x="0.0" y="519" width="128" height="128"/>
+                                <state key="normal" image="stoneisraelpng"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raB-Nq-iXr" userLabel="Paper">
+                                <rect key="frame" x="123.5" y="519" width="128" height="128"/>
+                                <state key="normal" image="paperisreal"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIi-Ly-BLB" userLabel="Scissors">
+                                <rect key="frame" x="247" y="519" width="128" height="128"/>
+                                <state key="normal" image="scissorsisreal"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doh-4h-laN">
+                                <rect key="frame" x="5" y="5" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ju2-wp-BkV">
+                                <rect key="frame" x="335.5" y="5" width="34.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperisreal" translatesAutoresizingMaskIntoConstraints="NO" id="avf-Np-WpW" userLabel="PlayerAnswer">
+                                <rect key="frame" x="0.0" y="26" width="128" height="128"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stoneisraelpng" translatesAutoresizingMaskIntoConstraints="NO" id="QqN-4f-diw" userLabel="CpuAnswer">
+                                <rect key="frame" x="247" y="26" width="128" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GameOver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mq-OL-EIq">
+                                <rect key="frame" x="139.5" y="322" width="96.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="avf-Np-WpW" firstAttribute="top" secondItem="Doh-4h-laN" secondAttribute="bottom" id="0J8-hq-WbM"/>
+                            <constraint firstItem="Doh-4h-laN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="6fk-Lb-JAJ"/>
+                            <constraint firstItem="Doh-4h-laN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="7FT-Td-CLZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="raB-Nq-iXr" secondAttribute="bottom" constant="20" id="Bgu-wG-vCc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aIi-Ly-BLB" secondAttribute="trailing" id="Ee0-Qw-gcp"/>
+                            <constraint firstItem="raB-Nq-iXr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JBc-3p-6bD"/>
+                            <constraint firstItem="avf-Np-WpW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ji3-Ug-Dl1"/>
+                            <constraint firstItem="z4W-Xs-ttV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kta-R9-NKw"/>
+                            <constraint firstItem="0mq-OL-EIq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PLv-3C-ZH9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z4W-Xs-ttV" secondAttribute="bottom" constant="20" id="RLF-rr-wdT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aIi-Ly-BLB" secondAttribute="bottom" constant="20" id="ehh-at-o2O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ju2-wp-BkV" secondAttribute="trailing" constant="5" id="m5v-Bj-J6f"/>
+                            <constraint firstItem="QqN-4f-diw" firstAttribute="top" secondItem="ju2-wp-BkV" secondAttribute="bottom" id="sje-Da-SuU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QqN-4f-diw" secondAttribute="trailing" id="x3k-BW-wF2"/>
+                            <constraint firstItem="ju2-wp-BkV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="xaU-jh-Oze"/>
+                            <constraint firstItem="0mq-OL-EIq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ymR-cd-6eI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="paperisreal" width="128" height="128"/>
+        <image name="scissorsisreal" width="128" height="128"/>
+        <image name="stoneisraelpng" width="128" height="128"/>
+    </resources>
 </document>
